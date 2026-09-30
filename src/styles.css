@@ -1,0 +1,128 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * BRUTALIST design system.
+ * Heavy black borders, hard offset shadows, zero radius, raw color blocks.
+ * All colors in oklch. Fonts loaded via <link> in __root.tsx.
+ */
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-lecture: var(--lecture);
+  --color-tutorial: var(--tutorial);
+  --color-practical: var(--practical);
+  --color-success: var(--success);
+  --font-display: "Archivo Black", sans-serif;
+  --font-sans: "Space Grotesk", sans-serif;
+  --shadow-brutal-sm: 3px 3px 0 0 var(--foreground);
+  --shadow-brutal: 6px 6px 0 0 var(--foreground);
+  --shadow-brutal-lg: 10px 10px 0 0 var(--foreground);
+  --shadow-brutal-primary: 6px 6px 0 0 var(--primary);
+}
+
+:root {
+  --radius: 0rem;
+  /* paper */
+  --background: oklch(0.955 0.018 95);
+  /* ink */
+  --foreground: oklch(0.16 0.008 90);
+  --card: oklch(0.995 0.005 95);
+  --card-foreground: oklch(0.16 0.008 90);
+  --popover: oklch(0.995 0.005 95);
+  --popover-foreground: oklch(0.16 0.008 90);
+  /* bold yellow */
+  --primary: oklch(0.878 0.192 96.5);
+  --primary-foreground: oklch(0.16 0.008 90);
+  /* signal blue */
+  --secondary: oklch(0.6 0.19 250);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.9 0.02 95);
+  --muted-foreground: oklch(0.42 0.015 90);
+  /* alarm red */
+  --accent: oklch(0.62 0.23 27);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.62 0.23 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  /* brutalism: borders are ink */
+  --border: oklch(0.16 0.008 90);
+  --input: oklch(0.16 0.008 90);
+  --ring: oklch(0.6 0.19 250);
+  /* session-type colors */
+  --lecture: oklch(0.878 0.192 96.5);
+  --tutorial: oklch(0.82 0.13 195);
+  --practical: oklch(0.62 0.23 27);
+  --success: oklch(0.68 0.19 145);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scrollbar-width: auto;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-foreground);
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Marquee strip */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 22s linear infinite;
+  will-change: transform;
+}

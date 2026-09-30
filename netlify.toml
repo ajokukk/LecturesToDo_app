@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # The Lovable Vite config defaults to a Cloudflare build. This switches it to Netlify.
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "22"

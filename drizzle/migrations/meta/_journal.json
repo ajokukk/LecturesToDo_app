@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790754071100,
+      "tag": "0000_create_tasks_table",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790768226321,
+      "tag": "0001_create_timetable_slots",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790769226321,
+      "tag": "0002_timetable_departments_levels",
+      "breakpoints": true
+    }
+  ]
+}
